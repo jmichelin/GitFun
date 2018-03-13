@@ -32,3 +32,7 @@ const isNumberPalindrome = (number) => {
   return reversed === number;
 }
  */
+
+ function isNumberPalindrome(number) {
+   
+ }
