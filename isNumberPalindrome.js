@@ -32,3 +32,20 @@ const isNumberPalindrome = (number) => {
   return reversed === number;
 }
  */
+
+ const isNumberPalindrome = (num) => {
+  num = num.toString();
+  let rev = [];
+  for (let i = num.length; i > 0; i--) {
+     let copy = num.slice(0, i);
+     rev.push(copy % 10);
+  }
+  if (rev.join('') === num) {
+    return true;
+  } else {
+    return false;
+  }
+
+ }
+
+ console.log(isNumberPalindrome(1331))
