@@ -39,3 +39,14 @@ const longestCommonPrefix = arrayOfStrings => {
         is empty)
  };
 */
+
+const longestCommonPrefix = arrayOfStrings => {
+	var longestPref =arrayOfStrings[0];
+	for(var i = 1; i < arrayofStrings.length; i++)
+
+}
+
+
+
+
+
