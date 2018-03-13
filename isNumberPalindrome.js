@@ -32,3 +32,19 @@ const isNumberPalindrome = (number) => {
   return reversed === number;
 }
  */
+
+function isNumberPalindrome(number) {
+
+   var reversed = 0;
+   var digit = number;
+   while(digit > 0) {
+    reversed = (reversed * 10) + (digit % 10);
+    digit -= digit % 10;
+    digit /= 10;
+   }
+   return reversed === number;
+}
+
+
+console.log(isNumberPalindrome(1331)); 
+ 
