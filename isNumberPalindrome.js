@@ -34,5 +34,15 @@ const isNumberPalindrome = (number) => {
  */
 
  function isNumberPalindrome(number) {
-   
+   var reversed = 0;
+   var digit = number;
+   while(digit >= 0) {
+    reversed = digit % 10;
+    digit -= digit % 10;
+    digit /= digit / 10;
+   }
+   return reversed === number;
  }
+
+ console.log(isNumberPalindrome(1331)); 
+//  console.log(133*10)
