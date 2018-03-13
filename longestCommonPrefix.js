@@ -43,16 +43,18 @@ const longestCommonPrefix = arrayOfStrings => {
 const longestCommonPrefix = arrayofStrings => {
   let prefix = arrayofStrings[0];
   let i = prefix.length;
-  for (let j = 1; j < arrayofStrings.length; j++) {
-    for (let i = prefix.length; i > 0; i--) {
-      if (arrayofStrings[j].indexOf(prefix, 0, prefix.length - 1) >= 0) {
-        return "match on prefix " + prefix + ' with word ' + arrayofStrings[j];
-      } else if (arrayofStrings[j].indexOf(prefix, 0, prefix.length - 1) === -1) {
-        j++;
+  for (let j = arrayofStrings.length - 1; j > 0; j--) {
+    for (let i = prefix.length; i >= 0; i--) {
+      if (arrayofStrings[j].indexOf(prefix, 0, prefix.length - 1) === -1) {
+        prefix = prefix.slice(0, i);
+      } else if (arrayofStrings[j].indexOf(prefix, 0, prefix.length - 1) >= 0) {
+        if (arrayofStrings[j - 1].indexOf(prefix, 0, prefix.length - 1) >= 0) {
+          return "match on prefix " + prefix + ' with word ' + arrayofStrings[j];
+        }
       }
     }
   }
 }
 
-console.log(longestCommonPrefix(['fl', 'flatulance', 'zoo']))
-console.log(longestCommonPrefix(['zoo', 'flatulance', 'zoo']))
+console.log(longestCommonPrefix(['flat', 'flatulance', 'flair']))
+console.log(longestCommonPrefix(['abcdefgh', 'aefghijk', 'abcefgh']))
