@@ -32,3 +32,18 @@ const isNumberPalindrome = (number) => {
   return reversed === number;
 }
  */
+
+ const isNumberPalindrome = (number) => {
+  let numCopy = number;
+  let reversedNum = null;
+  let digit = null;
+
+  while (numCopy > 0){
+    digit = numCopy % 10;
+    reversedNum = reversedNum * 10 + digit;
+    numCopy = Math.floor(numCopy / 10);
+  }
+  return reversedNum === number;
+ }
+
+ 
