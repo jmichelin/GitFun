@@ -44,12 +44,6 @@ const isNumberPalindrome = (number) => {
     reversed += digit;
     copyOfNum = Math.floor(copyOfNum / 10);
   }
-  // copy input number to build reversed number
-  // init reversed number and digit
-  // iterate until copy is 0 or less
-    // current digit is copy % 10
-    // multiply reversed number by 10 and add the digit
-    // divide the number copy by 10 and remove decimals
 
   return Number(reversed) === number;
 };
