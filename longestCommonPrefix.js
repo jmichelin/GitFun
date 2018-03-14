@@ -39,3 +39,19 @@ const longestCommonPrefix = arrayOfStrings => {
         is empty)
  };
 */
+const longestCommonPrefix = (arrayOfStrings) => {
+  let longestPrefix = '';
+  let firstWord = arrayOfStrings[0].toLowerCase();
+  let longestLength = 0;
+  for (let i = 1; i < arrayOfStrings.length; i++){
+    let currentWord = arrayOfStrings[i].toLowerCase();
+    for (let j = currentWord.length - 1; j >= 0; j--) {
+      let currentPrefix = currentWord.slice(0, j + 1);
+      if (firstWord.includes(currentPrefix) && currentPrefix.length > longestLength) {
+        longestPrefix = currentPrefix;
+        longestLength = currentPrefix.length;
+      }
+    }
+  }
+  return longestPrefix;
+};
